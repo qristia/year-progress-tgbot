@@ -5,7 +5,7 @@ export function createDailyJob(callback: () => void): CronJob | undefined {
   console.log('creating cron job');
   try {
     const dailyJob = new CronJob(
-      CONFIG.cron.schedule.every30Seconds,
+      CONFIG.cron.schedule.daily,
       () => {
         callback();
       },
