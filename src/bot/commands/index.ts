@@ -1,4 +1,5 @@
 import start from './start';
 import getYearProgress from './get_year_progress';
+import stop from './stop';
 
-export default { start, getYearProgress };
+export default { start, stop, getYearProgress };

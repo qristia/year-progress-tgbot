@@ -1,3 +1,6 @@
+import { UserController } from './db/controller/UserController';
+
+export const userController = new UserController();
 export const CONFIG = {
   progressBar: {
     width: 15,
@@ -5,7 +8,10 @@ export const CONFIG = {
     chars: ['=', '>', '.'],
   },
   cron: {
-    schedule: '*/30 * * * * *',
+    schedule: {
+      daily: '00 00 * * *',
+      every30Seconds: '*/30 * * * * *',
+    },
     tz: 'America/Sao_Paulo',
   },
 };

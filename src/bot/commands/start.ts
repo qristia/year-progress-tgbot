@@ -1,10 +1,18 @@
 import { Context } from 'telegraf';
-import { registeredUsers } from '..';
+import { userController } from '../../config';
 
 export default function start(ctx: Context): void {
-  ctx.reply('hello!');
   const chatId = ctx.chat?.id;
   if (chatId != undefined) {
-    registeredUsers.push({ id: chatId, started: true });
+    userController
+      .add(chatId.toString())
+      .then(() => {
+        ctx.replyWithMarkdownV2(`hello, ${ctx.from
+          .first_name!}\\. i'll be sending you the progress of the year every day from now on\\!
+      if you want me to stop, you can just say \`/stop\` anytime\\!`);
+      })
+      .catch((err) => {
+        ctx.reply('hello!');
+      });
   }
 }

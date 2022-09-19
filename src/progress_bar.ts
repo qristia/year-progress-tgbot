@@ -4,7 +4,7 @@ export default class ProgressBar {
   private chars: string[] = CONFIG.progressBar.chars;
   private wrapper: string[] = CONFIG.progressBar.wrapper;
   private width: number = CONFIG.progressBar.width;
-  private percentage: number;
+  protected percentage: number;
 
   constructor(percentage = 0) {
     this.percentage = percentage;
