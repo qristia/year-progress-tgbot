@@ -2,7 +2,7 @@ import { Context } from 'telegraf';
 import YearProgress from '../../year-progress';
 
 export function markdownYearProgress(): string {
-  return ''.concat(
+  return 'year progress:\n'.concat(
     '`', YearProgress.getProgressBar(), '`',
     ' _', YearProgress.getLabel().replace('.', '\\.'), '_',
   );
