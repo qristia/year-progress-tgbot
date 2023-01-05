@@ -1,11 +1,11 @@
 import { CronJob } from 'cron';
 import { CONFIG } from './config';
 
-export function createDailyJob(callback: () => void): CronJob | undefined {
+export function createJob(cronTime: string, callback: () => void) {
   console.log('creating cron job');
   try {
     const dailyJob = new CronJob(
-      CONFIG.cron.schedule.daily,
+      cronTime,
       () => {
         callback();
       },

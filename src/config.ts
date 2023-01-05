@@ -11,6 +11,8 @@ export const CONFIG = {
     schedule: {
       daily: '00 00 * * *',
       every30Seconds: '*/30 * * * * *',
+      everyHour: '00 */1 * * *',
+      everyMinute: '* * * * *',
     },
     tz: 'America/Sao_Paulo',
   },
